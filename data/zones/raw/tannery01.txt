@@ -1,0 +1,178 @@
+ID: 1
+Title: Entrance to the Tannery
+Desc: You stand at the entrance to a bustling tannery, with the smell of raw hides and various chemicals in the air. To the north, you see a delivery area where hides are unloaded from carts. To the east, you can see a doorway leading into the main tannery area. To the west, a path leads to a warehouse.
+North Exit: 2
+East Exit: 3
+West Exit: 4
+
+ID: 2
+Title: Delivery Area
+Desc: Workers busily unload hides from carts in this delivery area. The ground is damp and muddy from the constant movement of people and goods. To the south, you can return to the entrance of the tannery. To the east, you see a door leading to a soaking room.
+South Exit: 1
+East Exit: 5
+
+ID: 3
+Title: Main Tannery Area
+Desc: The main tannery area is filled with workers meticulously working on hides. To the west, you can return to the entrance. To the north, you can see the fleshing room where workers scrape hides to remove any remaining flesh. To the east, you notice a room dedicated to the salting process.
+West Exit: 1
+North Exit: 6
+East Exit: 8
+
+ID: 4
+Title: Warehouse
+Desc: This warehouse is filled with wooden shelves stocked with various tools and chemicals for the tanning process. To the east, you can return to the entrance of the tannery. A locked door to the north leads to an office.
+East Exit: 1
+North Exit: 7, door, locked
+
+ID: 5
+Title: Soaking Room
+Desc: Hides are soaked in large vats of water to clean and soften them. Workers periodically stir the hides to ensure even soaking. To the west, you can return to the delivery area. To the north, you can enter the fleshing room.
+West Exit: 2
+North Exit: 6
+
+ID: 6
+Title: Fleshing Room
+Desc: Workers use curved knives to scrape away any remaining flesh from the hides. The air is filled with the sound of scraping and the occasional chatter of workers. To the south, you can return to the main tannery area. To the east, you can enter the salting room.
+South Exit: 3
+East Exit: 8
+
+ID: 7
+Title: Office
+Desc: The tannery owner's office is filled with paperwork and various samples of finished leather. A window overlooks the main tannery area. To the south, you can return to the warehouse.
+South Exit: 4, door
+
+ID: 8
+Title: Salting Room
+Desc: Large piles of salt line the room, and workers rub it into the hides to help preserve them. The smell of salt is strong here. To the west, you can return to the fleshing room. To the north, you can see a room dedicated to drying the hides.
+West Exit: 6
+North Exit: 9
+
+ID: 9
+Title: Drying Room
+Desc: Hides are hung on wooden racks to air dry, allowing any remaining moisture to evaporate. To the south, you can return to the salting room. To the east, you can enter a room where hides are soaked in a tannin solution.
+South Exit: 8
+East Exit: 10
+
+ID: 10
+Title: Tannin Soaking Room
+Desc: Large vats containing a dark tannin solution fill this room. Workers carefully lower hides into the liquid, ensuring they are fully submerged. To the west, you can return to the drying room. To the north, you can enter the bating room where enzymes are used to soften the hides.
+West Exit: 9
+North Exit: 11
+
+ID: 11
+Title: Bating Room
+Desc: Workers carefully apply enzymes to the hides, allowing them to break down and soften. The room has a pungent odor from the enzymes. To the south, you can return to the tannin soaking room. To the east, you can enter the final drying room.
+South Exit: 10
+East Exit: 12
+
+ID: 12
+Title: Final Drying Room
+Desc: Hides are hung for a final time to ensure they are completely dry and ready for finishing. To the west, you can return to the bating room. To the north, you can enter the finishing room where the hides are smoothed and dyed.
+West Exit: 11
+North Exit: 13
+
+ID: 13
+Title: Finishing Room
+Desc: This room is filled with workers meticulously smoothing, dyeing, and polishing the finished hides. To the south, you can return to the final drying room. To the east, you can enter the quality control room.
+South Exit: 12
+East Exit: 14
+
+ID: 14
+Title: Quality Control Room
+Desc: Hides are carefully inspected here for any imperfections before they are deemed suitable for sale. To the west, you can return to the finishing room. To the north, you can enter the packaging area.
+West Exit: 13
+North Exit: 15
+
+ID: 15
+Title: Packaging Area
+Desc: Finished hides are rolled and bundled here, ready to be transported to customers. To the south, you can return to the quality control room. To the east, you can enter the shipping area.
+South Exit: 14
+East Exit: 16
+
+ID: 16
+Title: Shipping Area
+Desc: Workers load the packaged hides onto carts and wagons, preparing them for their journey to various destinations. To the west, you can return to the packaging area. To the north, you can see a small rest area for the workers.
+West Exit: 15
+North Exit: 17
+
+ID: 17
+Title: Workers' Rest Area
+Desc: A simple area with benches and a table where workers can take a break and share a meal. To the south, you can return to the shipping area. To the east, a hidden door leads to a secret storage room.
+South Exit: 16
+East Exit: 18, hidden
+
+ID: 18
+Title: Secret Storage Room
+Desc: This hidden room contains valuable leather goods and rare dyes. To the west, you can return to the workers' rest area.
+West Exit: 17, hidden
+
+ID: 19
+Title: Tool Maintenance Room
+Desc: Workers sharpen and repair the various tools used in the tannery. To the east, you can return to the main tannery area.
+East Exit: 3
+
+ID: 20
+Title: Cleaning Area
+Desc: Workers wash and clean the tools and workspaces used in the tanning process. To the west, you can return to the main tannery area.
+West Exit: 3
+
+ID: 21
+Title: Tannin Storage Room
+Desc: This room is filled with barrels of tannin solution, ready to be used in the tanning process. To the east, you can return to the tannin soaking room
+East Exit: 10
+
+ID: 22
+Title: Salt Storage Room
+Desc: Sacks of salt are stored here, ready to be used for preserving hides. To the west, you can return to the salting room.
+West Exit: 8
+
+ID: 23
+Title: Enzyme Storage Room
+Desc: Shelves filled with containers of enzymes line the walls of this room. The enzymes are used to soften the hides during the bating process. To the west, you can return to the bating room.
+West Exit: 11
+
+ID: 24
+Title: Dye Storage Room
+Desc: Rows of colorful dyes line the shelves in this room, waiting to be used in the finishing process. To the west, you can return to the finishing room.
+West Exit: 13
+
+ID: 25
+Title: Waste Disposal Area
+Desc: This outdoor area is designated for the disposal of waste from the tanning process. The smell is quite unpleasant. To the east, you can return to the main tannery area.
+East Exit: 3
+
+ID: 26
+Title: Water Well
+Desc: A simple stone well provides water for the tannery's various processes. To the west, you can return to the soaking room.
+West Exit: 5
+
+ID: 27
+Title: Repair Shop
+Desc: In this small workshop, skilled craftsmen repair damaged hides and tools. To the east, you can return to the fleshing room.
+East Exit: 6
+
+ID: 28
+Title: Leather Storage Room
+Desc: Shelves filled with rolls of finished leather cover the walls in this room. To the west, you can return to the packaging area.
+West Exit: 15
+
+ID: 29
+Title: Sewing Room
+Desc: Workers sew together pieces of leather to create larger sheets for various purposes. To the east, you can return to the quality control room.
+East Exit: 14
+
+ID: 30
+Title: Tannery Rooftop
+Desc: The tannery's rooftop offers a panoramic view of the entire facility. To the south, a trapdoor leads back to the office.
+South Exit: 7, door
+
+ID: 7
+Title: Office
+Desc: The tannery owner's office is filled with paperwork and various samples of finished leather. A window overlooks the main tannery area. To the south, you can return to the warehouse. A ladder leads up to the tannery rooftop.
+South Exit: 4, door
+Up Exit: 30
+
+ID: 30
+Title: Tannery Rooftop
+Desc: The tannery's rooftop offers a panoramic view of the entire facility. To the north, a ladder leads back down to the office.
+Down Exit: 7

@@ -8,6 +8,13 @@
                        (println "Rooms:")
                        (doseq [room (:rooms world)]
                          (println (str (:title room) " (" (:id room) ")"))))}
+   {:cmd "convert" :fn (fn cmd-convert
+                         [world cmd-input args]
+                         (try
+                           (cmud.world/convert-raw-zone (first args))
+                           (println "Converted zone file.")
+                           (catch Exception e
+                             (println (str "Error converting zone file: " (.getMessage e))))))}
    ])
 
 (defn handle-cmd

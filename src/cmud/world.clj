@@ -3,9 +3,23 @@
             [clojure.string :as string]
             [clojure.string :as str]))
 
+(defn- load-zones
+  []
+  (let [zone-files (file-seq (io/file "data/zones/edn"))]
+    (reduce (fn [zones zone-file]
+              (if (.isDirectory zone-file)
+                zones
+                (let [zone (read-string (slurp zone-file))]
+                  (conj zones zone))))
+            []
+            zone-files)))
+
 (defn make-world
   []
-  {:rooms []})
+  (let [zones (load-zones)
+        rooms (mapcat identity zones)]
+    {:rooms rooms
+     :zones zones}))
 
 (defn raw-data->exit
   [raw-data]

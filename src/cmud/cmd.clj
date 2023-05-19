@@ -1,8 +1,32 @@
 (ns cmud.cmd
   (:require [clojure.string :as string]
-            [cmud.world]))
+            [cmud.world :refer [room-id->str]]))
 
 (declare handle-cmd)
+
+(defn parse-room-id
+  [world entity s]
+  (cond
+    (nil? s)
+    nil
+
+    (string/includes? s "-")
+    (try
+      (let [[prefix suffix] (string/split s #"-")]
+        (let [zone-id prefix
+              room-num (Integer/parseInt suffix)]
+          {:zone-id zone-id :room-num room-num}))
+      (catch NumberFormatException e
+        nil))
+
+    :else
+    (try
+      (let [in-room-id (get-in world [:entities entity :in-room-id])]
+        (if in-room-id
+          {:zone-id (:zone-id in-room-id) :room-num (Integer/parseInt s)}
+          {:zone-id (get-in world [:zones 0 :id]) :room-num (Integer/parseInt s)}))
+      (catch NullPointerException e
+        nil))))
 
 (defn cmd-move
   [world entity dir]
@@ -27,22 +51,24 @@
    {:cmd "down" :fn (fn cmd-down [world entity _ _] (cmd-move world entity :down))}
    {:cmd "rooms" :fn (fn cmd-rooms
                        [world entity cmd-input args]
-                       (println "Rooms:")
-                       (doseq [room (:rooms world)]
-                         (println (str (:title room) " (" (:id room) ")"))))}
+                       (doseq [zone (:zones world)]
+                         (println "Zone:" (:id zone))
+                         (doseq [room (:rooms zone)]
+                           (println (str "  " (:title room) " (" (room-id->str (:id room)) ")")))))}
    {:cmd "convert" :fn (fn cmd-convert
                          [world entity cmd-input args]
                          (try
                            (cmud.world/convert-raw-zone (first args))
                            (println "Converted zone file.")
                            (catch Exception e
-                             (println (str "Error converting zone file: " (.getMessage e))))))}
+                             (println (str "Error converting zone file: " (.getMessage e)))
+                             (.printStackTrace e))))}
    {:cmd "look" :fn (fn cmd-look
                       [world entity cmd-input args]
                       (let [room (cmud.world/get-entity-room world entity)]
                         (if room
                           (do
-                            (println (str (:title room) " (" (:id room) ")"))
+                            (println (str (:title room) " (" (room-id->str (:id room)) ")"))
                             (println (:description room))
                             (let [visible-exits (filter (fn [[dir exit]]
                                                           (not (:hidden (:flags exit))))
@@ -52,7 +78,7 @@
                           (println "You are nowhere."))))}
    {:cmd "goto" :fn (fn cmd-goto
                       [world entity cmd-input args]
-                      (let [room-id (Integer/parseInt (first args))
+                      (let [room-id (parse-room-id world entity (first args))
                             room (cmud.world/get-room world room-id)]
                         (if room
                           (let [world' (assoc-in world [:entities entity :in-room-id] room-id)]

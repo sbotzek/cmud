@@ -3,6 +3,8 @@
             [clojure.string :as string]
             [clojure.string :as str]))
 
+(defonce next-entity (atom 1))
+
 (defn- load-zones
   []
   (let [zone-files (file-seq (io/file "data/zones/edn"))]
@@ -19,7 +21,25 @@
   (let [zones (load-zones)
         rooms (mapcat identity zones)]
     {:rooms rooms
-     :zones zones}))
+     :zones zones
+     :entities {}}))
+
+(defn get-room
+  [world room-id]
+  (first (filter #(= (:id %) room-id) (:rooms world))))
+
+(defn get-entity-room
+  [world entity]
+  (let [in-room-id (get-in world [:entities entity :in-room-id])
+        room (get-room world in-room-id)]
+    room))
+
+(defn add-entity
+  [world]
+  (let [entity (swap! next-entity inc)
+        world (assoc-in world [:entities entity] {:in-room-id nil})]
+    {:entity entity
+     :world world}))
 
 (defn raw-data->exit
   [raw-data]

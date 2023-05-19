@@ -1,18 +1,21 @@
 (ns cmud.server
   (:require [clojure.string :as string]
             [cmud.cmd :refer [handle-cmd]]
-            [cmud.world :refer [make-world]]))
+            [cmud.world :refer [make-world add-entity]]))
 
 (defn main-loop
-  [world]
+  [world entity]
   (let [input (string/trim (read-line))
         [cmd & args] (string/split input #"\s")]
     (cond
-      (= cmd "") (recur world)
-      (not= cmd "quit") (recur (handle-cmd world cmd args))
+      (= cmd "") (recur world entity)
+      (not= cmd "quit") (let [world' (or (handle-cmd world entity cmd args) world)]
+                          (recur world' entity))
       :else (println "goodbye"))))
 
 (defn -main
   []
   (println "Welcome to the game!")
-  (main-loop (make-world)))
+  (let [world (make-world)
+        {:keys [entity world]} (add-entity world)]
+    (main-loop world entity)))

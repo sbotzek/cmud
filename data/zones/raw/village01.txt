@@ -1,0 +1,250 @@
+ID: 1
+Title: Entrance to the Village
+Desc: You stand on a worn cobblestone path that marks the entrance to the small fishing village. The smell of the sea mingles with the scent of nearby pines. To the north, you can see a few quaint houses. There's a path leading east towards the village square, and to the west, the cobblestone road continues out of the village.
+North Exit: 2
+East Exit: 3
+West Exit: 31, hidden
+
+ID: 2
+Title: Quaint Houses
+Desc: You're in a small residential area. Fishermen's houses, charming and simple, line the narrow street. Children's laughter rings out from one of the houses to the east. The cobblestone path continues to the north. Behind you, to the south, lies the village entrance.
+East Exit: 4
+North Exit: 5
+South Exit: 1
+
+ID: 3
+Title: Village Square
+Desc: You've arrived at the bustling village square. The cobblestone ground gives way to a small fountain in the center. The road to the west leads back to the village entrance, and there's a path leading north to the market. You notice a hidden alleyway to the east.
+North Exit: 6
+West Exit: 1
+East Exit: 7, hidden
+
+ID: 4
+Title: Children's Play Area
+Desc: You find yourself in a lively area where village children are playing. A makeshift playground is set up to the west, adjacent to the houses. To the south, the path leads back to the quaint houses. 
+West Exit: 2
+South Exit: 8
+
+ID: 5
+Title: North Residential Area
+Desc: You're at the far end of the residential area. A peaceful, quiet atmosphere hangs over this part of the village. The road to the south leads back to the quaint houses. A hidden path heads west into the woods.
+South Exit: 2
+West Exit: 9, hidden
+
+ID: 6
+Title: Market Square
+Desc: The village market is a lively place filled with merchants and fishermen selling their wares. There's a tantalizing array of goods here. The road leads back south to the village square and east to the docks.
+South Exit: 3
+East Exit: 10
+
+ID: 7
+Title: Hidden Alley
+Desc: You've discovered a hidden alley, not normally trodden by villagers. The alley is narrow and shadowy, with walls covered in ivy. It leads east towards a mysterious cellar, and west back to the village square.
+East Exit: 11, door
+West Exit: 3
+
+ID: 8
+Title: Village Well
+Desc: You've reached a common area where the village well stands. Villagers come here to collect water, gossip and sometimes, rest under the shade of a large tree. The road back north leads to the children's play area.
+North Exit: 4
+
+ID: 9
+Title: Village Outskirts
+Desc: You've found the outskirts of the village, a quiet, peaceful place where you can see the surrounding woods and wildflowers. To the east lies the north residential area.
+East Exit: 5
+
+ID: 10
+Title: The Docks
+Desc: You stand on the bustling docks of the village. Fishermen haul in their catch, seagulls cry overhead, and the salty sea air fills your nostrils. To the west is the market square, while a rickety bridge leads north over a narrow creek.
+West Exit: 6
+North Exit: 12
+
+ID: 11
+Title: Mysterious Cellar
+Desc: Inside
+
+ the cellar, it's cool and slightly damp. The narrow space is filled with barrels and crates. There seems to be a secret door in the northern wall. The only exit is the one you came in from, leading west to the hidden alley.
+North Exit: 13, door, locked
+West Exit: 7
+
+ID: 12
+Title: Creek Bridge
+Desc: You're standing on a rickety bridge that crosses a creek. The water below is clear and sparkling. The bridge leads south back to the docks and north towards an old lighthouse.
+North Exit: 14
+South Exit: 10
+
+ID: 13
+Title: Secret Chamber
+Desc: You've discovered a secret chamber hidden behind the cellar. It's filled with an array of strange artifacts and old maps. A small tunnel to the south leads back to the cellar.
+South Exit: 11
+
+ID: 14
+Title: Old Lighthouse
+Desc: At the top of a slight incline stands an old lighthouse, a beacon for lost sailors. It has a weathered look about it. There's a winding path leading down to the south back towards the creek bridge, and a door to the lighthouse entrance to the north.
+South Exit: 12
+North Exit: 15, door
+
+ID: 15
+Title: Lighthouse Entrance
+Desc: You are at the entrance of the lighthouse. Inside, a narrow staircase spirals upward. The exit door leads south back to the lighthouse grounds.
+South Exit: 14
+Up Exit: 16
+
+ID: 16
+Title: Lighthouse Interior
+Desc: You are inside the lighthouse. The circular room is narrow, and the stairs lead up to the lighthouse beacon and down to the entrance.
+Up Exit: 17
+Down Exit: 15
+
+ID: 17
+Title: Lighthouse Beacon
+Desc: You stand at the top of the lighthouse, beside the beacon. The view of the sea and the village below is breathtaking. The stairs lead back down to the lighthouse interior.
+Down Exit: 16
+
+ID: 18
+Title: Village Church
+Desc: You stand in front of a small, stone church. The scent of incense wafts out from the open door. The entrance leads west back to the village square.
+West Exit: 3
+
+ID: 19
+Title: Village Inn
+Desc: You've entered the cozy village inn. There's a warm, welcoming fire crackling in the hearth. The door leads east back to the village square.
+East Exit: 3
+
+ID: 20
+Title: Blacksmith's Forge
+Desc: You stand before the blacksmith's forge, a sturdy stone building. Sparks fly as the blacksmith hammers out a piece of metal. The forge entrance leads west back to the market square.
+West Exit: 6
+
+ID: 21
+Title: Fishmonger's Stall
+Desc: You've reached the fishmonger's stall by the docks. The smell of fish is strong, but not unpleasant. The path back west leads to the market square.
+West Exit: 6
+
+ID: 22
+Title: Secluded Beach
+Desc: You've discovered a secluded beach, hidden away from the bustle of the village. The waves lap gently at the shore. A path winds back east towards the docks.
+East Exit: 10
+
+ID: 23
+Title: Old Fisherman's Shack
+Desc: An old fisherman's shack stands on stilts at the edge of the water. The wood is weathered and worn, but it still holds a certain charm. A narrow walkway leads south back to the docks.
+South Exit: 10
+
+ID: 24
+Title: Woodcutter's Cabin
+Desc: You've found a woodcutter's cabin nestled in the forest. There's a sense of peace and tranquility here. A
+
+ path winds back east to the village outskirts.
+East Exit: 9
+
+ID: 25
+Title: Deep Woods
+Desc: You're deep in the woods, the village barely visible through the trees. The forest is peaceful, the air cool and fresh. The path back west leads to the woodcutter's cabin.
+West Exit: 24
+
+ID: 26
+Title: Abandoned Mine Entrance
+Desc: You've discovered an old mine entrance, half-hidden by foliage. It's dark inside, and a cool breeze blows from the depths. The mine entrance leads east back to the deep woods.
+East Exit: 25
+
+ID: 27
+Title: Abandoned Mine Shaft
+Desc: You are inside the mine shaft. It's cool and dark, and there's a faint echo. A path leads back west to the mine entrance, while a narrow tunnel goes deeper into the mine to the east.
+West Exit: 26
+East Exit: 28, door
+
+ID: 28
+Title: Hidden Mine Chamber
+Desc: You've found a hidden chamber in the mine. It's full of old mining equipment and a few glittering gems. A tunnel leads back west to the mine shaft.
+West Exit: 27
+
+ID: 29
+Title: Flower Meadow
+Desc: You've discovered a beautiful meadow filled with wildflowers. The air here is sweet with their scent. A path to the south leads back to the woodcutter's cabin.
+South Exit: 24
+
+ID: 30
+Title: Old Shrine
+Desc: Nestled among the trees is an old shrine, worn by time but still standing. It feels peaceful here. A narrow path leads back north to the flower meadow.
+North Exit: 29
+
+ID: 31
+Title: Outside the Village
+Desc: You are outside the village. The cobblestone road you're on stretches out in both directions. To the east, it leads back to the village entrance.
+East Exit: 1
+
+ID: 9
+Title: Village Outskirts
+Desc: You've found the outskirts of the village, a quiet, peaceful place where you can see the surrounding woods and wildflowers. To the east lies the north residential area. You notice a hidden path that leads west towards the open countryside.
+East Exit: 5
+West Exit: 31, hidden
+
+ID: 20
+Title: Blacksmith's Forge
+Desc: You stand before the blacksmith's forge, a sturdy stone building. Sparks fly as the blacksmith hammers out a piece of metal. The forge entrance leads west back to the market square, and a small alley leads north towards the fishmonger's stall.
+West Exit: 6
+North Exit: 21
+
+ID: 21
+Title: Fishmonger's Stall
+Desc: You've reached the fishmonger's stall by the docks. The smell of fish is strong, but not unpleasant. The path back west leads to the market square, while to the south, you can see the blacksmith's forge.
+West Exit: 6
+South Exit: 20
+
+ID: 32
+Title: Church Interior
+Desc: The inside of the village church is tranquil and filled with the scent of incense and old wood. Light filters in through the stained glass windows. The only exit is the large door to the south, leading back to the village square.
+South Exit: 3
+
+ID: 33
+Title: Village Inn Interior
+Desc: Inside the village inn, a warm fire crackles in the hearth. The air is filled with laughter and the scent of home-cooked meals. The main entrance to the east leads back to the village square.
+East Exit: 3
+
+ID: 34
+Title: Blacksmith's Forge Interior
+Desc: Inside the blacksmith's forge, the heat from the furnace is intense. The blacksmith works at his anvil, sparks flying. The only exit is a large door to the north, leading back to the market square.
+North Exit: 6
+
+ID: 35
+Title: Fisherman's Shack Interior
+Desc: The fisherman's shack is cozy, filled with nets and fishing gear. A small window overlooks the sea. The door leads south back to the docks.
+South Exit: 10
+
+ID: 36
+Title: Woodcutter's Cabin Interior
+Desc: The woodcutter's cabin interior is modest and neat. There's a small hearth with a simmering pot and a cot in one corner. The only exit is a wooden door to the west, leading back to the village outskirts.
+West Exit: 9
+
+Now, these buildings have interiors that players can explore. The exteriors would also need to be updated to include entrances to these interiors. Let's update those:
+
+ID: 18
+Title: Village Church
+Desc: You stand in front of a small, stone church. The scent of incense wafts out from the open door, inviting you to step inside. The entrance leads west back to the village square, and north into the church.
+West Exit: 3
+North Exit: 32, door
+
+ID: 19
+Title: Village Inn
+Desc: You've entered the cozy village inn. There's a warm, welcoming fire crackling in the hearth. The door leads east back to the village square, and west into the inn's main room.
+East Exit: 3
+West Exit: 33, door
+
+ID: 20
+Title: Blacksmith's Forge
+Desc: You stand before the blacksmith's forge, a sturdy stone building. Sparks fly as the blacksmith hammers out a piece of metal. The forge entrance leads west back to the market square, and south into the blacksmith's working area.
+West Exit: 6
+South Exit: 34, door
+
+ID: 23
+Title: Old Fisherman's Shack
+Desc: An old fisherman's shack stands on stilts at the edge of the water. The wood is weathered and worn, but it still holds a certain charm. A narrow walkway leads south back to the docks, and north into the shack.
+South Exit: 10
+North Exit: 35, door
+
+ID: 24
+Title: Woodcutter's Cabin
+Desc: You've found a woodcutter's cabin nestled in the forest. There's a sense of peace and tranquility here. A path winds back east to the village outskirts, and west into the cabin.
+East Exit: 9
+West Exit: 36, door

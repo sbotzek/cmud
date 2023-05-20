@@ -1,6 +1,6 @@
 (ns cmud.cmd
   (:require [clojure.string :as string]
-            [cmud.world :refer [room-id->str]]
+            [cmud.world :as world]
             [cmud.cmd :as cmd]))
 
 (declare handle-cmd)
@@ -39,10 +39,10 @@
 
 (defn cmd-move
   [world entity dir]
-  (let [room (cmud.world/get-entity-room world entity)
+  (let [room (world/get-entity-room world entity)
         exit (get-in room [:exits dir])]
     (if exit
-      (let [to-room (cmud.world/get-room world (:to-room-id exit))]
+      (let [to-room (world/get-room world (:to-room-id exit))]
         (if to-room
           (let [world' (assoc-in world [:entities entity :in-room-id] (:to-room-id exit))]
             (handle-cmd world' entity "look" [])
@@ -70,35 +70,35 @@
    {:cmd "down" :fn (fn cmd-down [world entity _ _] (cmd-move world entity :down))}
    {:cmd "season" :fn (fn cmd-season
                         [world entity cmd-input args]
-                        (cmd-setting world :season cmud.world/seasons (first args)))}
+                        (cmd-setting world :season world/seasons (first args)))}
    {:cmd "time" :fn (fn cmd-time
                       [world entity cmd-input args]
-                        (cmd-setting world :time cmud.world/times (first args)))}
+                        (cmd-setting world :time world/times (first args)))}
    {:cmd "weather" :fn (fn cmd-weather
                          [world entity cmd-input args]
-                        (cmd-setting world :weather cmud.world/weathers (first args)))}
+                        (cmd-setting world :weather world/weathers (first args)))}
   {:cmd "rooms" :fn (fn cmd-rooms
                        [world entity cmd-input args]
                        (doseq [zone (:zones world)]
                          (println "Zone:" (:id zone))
                          (doseq [room (:rooms zone)]
-                           (println (str "  " (:title room) " (" (room-id->str (:id room)) ")")))))}
+                           (println (str "  " (:title room) " (" (world/room-id->str (:id room)) ")")))))}
    {:cmd "convert" :fn (fn cmd-convert
                          [world entity cmd-input args]
                          (try
-                           (cmud.world/convert-raw-zone (first args))
+                           (world/convert-raw-zone (first args))
                            (println "Converted zone file.")
-                           (cmud.world/reload-zones world)
+                           (world/reload-zones world)
                            (catch Exception e
                              (println (str "Error converting zone file: " (.getMessage e)))
                              (.printStackTrace e))))}
    {:cmd "look" :fn (fn cmd-look
                       [world entity cmd-input args]
-                      (let [room (cmud.world/get-entity-room world entity)]
+                      (let [room (world/get-entity-room world entity)]
                         (if room
                           (do
-                            (println (str (:title room) " (" (room-id->str (:id room)) ")" " [" (:season world) " " (:time world) " " (:weather world) "]"))
-                            (println (cmud.world/room-description room world entity))
+                            (println (str (:title room) " (" (world/room-id->str (:id room)) ")" " [" (:season world) " " (:time world) " " (:weather world) "]"))
+                            (println (world/room-description room world entity))
                             (let [visible-exits (filter (fn [[dir exit]]
                                                           (not (:hidden (:flags exit))))
                                                         (:exits room))]
@@ -108,7 +108,7 @@
    {:cmd "goto" :fn (fn cmd-goto
                       [world entity cmd-input args]
                       (let [room-id (parse-room-id world entity (first args))
-                            room (cmud.world/get-room world room-id)]
+                            room (world/get-room world room-id)]
                         (if room
                           (let [world' (assoc-in world [:entities entity :in-room-id] room-id)]
                             (handle-cmd world' entity "look" [])

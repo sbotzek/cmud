@@ -1,8 +1,15 @@
 (ns cmud.cmd
   (:require [clojure.string :as string]
-            [cmud.world :refer [room-id->str]]))
+            [cmud.world :refer [room-id->str]]
+            [cmud.cmd :as cmd]))
 
 (declare handle-cmd)
+
+(defn parse-keyword
+  [keywords s]
+  (->> keywords
+       (filter #(string/starts-with? (name %) s))
+       (first)))
 
 (defn parse-room-id
   [world entity s]
@@ -41,6 +48,16 @@
           (println (str "Could not find room " (:to-room-id exit)))))
       (println (str "You cannot go " (name dir))))))
 
+(defn cmd-setting
+  [m setting keywords s]
+  (if s
+    (let [value (parse-keyword keywords s)]
+      (if value
+        (do
+          (println (str "Setting " (name setting) " to " (name value)))
+          (assoc m setting value))
+        (println (str "Unknown " (name setting) ": " s ", valid ones are: " (string/join ", " (map name keywords))))))
+    (println (str "Current " (name setting) ": " (name (get m setting))))))
 
 (def cmd-table
   [{:cmd "north" :fn (fn cmd-north [world entity _ _] (cmd-move world entity :north))}
@@ -49,7 +66,16 @@
    {:cmd "west" :fn (fn cmd-west [world entity _ _] (cmd-move world entity :west))}
    {:cmd "up" :fn (fn cmd-up [world entity _ _] (cmd-move world entity :up))}
    {:cmd "down" :fn (fn cmd-down [world entity _ _] (cmd-move world entity :down))}
-   {:cmd "rooms" :fn (fn cmd-rooms
+   {:cmd "season" :fn (fn cmd-season
+                        [world entity cmd-input args]
+                        (cmd-setting world :season cmud.world/seasons (first args)))}
+   {:cmd "time" :fn (fn cmd-time
+                      [world entity cmd-input args]
+                        (cmd-setting world :time cmud.world/times (first args)))}
+   {:cmd "weather" :fn (fn cmd-weather
+                         [world entity cmd-input args]
+                        (cmd-setting world :weather cmud.world/weathers (first args)))}
+  {:cmd "rooms" :fn (fn cmd-rooms
                        [world entity cmd-input args]
                        (doseq [zone (:zones world)]
                          (println "Zone:" (:id zone))
@@ -68,8 +94,8 @@
                       (let [room (cmud.world/get-entity-room world entity)]
                         (if room
                           (do
-                            (println (str (:title room) " (" (room-id->str (:id room)) ")"))
-                            (println (:description room))
+                            (println (str (:title room) " (" (room-id->str (:id room)) ")" " [" (:season world) " " (:time world) " " (:weather world) "]"))
+                            (println (cmud.world/room-description room world entity))
                             (let [visible-exits (filter (fn [[dir exit]]
                                                           (not (:hidden (:flags exit))))
                                                         (:exits room))]

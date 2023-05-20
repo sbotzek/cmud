@@ -1,0 +1,73 @@
+Glossary of terms:
+- floig: a multiplayer text roleplaying game, where players can adventure together, explore the world, fighting monsters and finding treasure.
+- zoit: a location a player can be
+- noit: a group of zoits centered around a larger place - such as a castle, church, forest, mountain, etc
+- desc: description
+
+Players move around zoits.  They do so by going in certain directions: north, south, east, west, up, down.  Each zoit should be reachable by at least 1 or more zoits.  Most of the time, if zoit a is connected to zoit b, zoit b is also connected to zoit a.
+
+An exit means there's a way to go a direction from the zoit to another zoit.  Since there are 6 directions, each zoit can have up to 6 exits.
+
+Each zoit has these things:
+- a zoit id
+- a zoit title
+- a zoit desc
+- a zoit exits desc
+- up to 6 exits
+
+A zoit desc must be 3 to 5 sentences long to describe the current zoit.  You should not mention any details about the exits here - that is only done in the exits desc.
+
+A zoit exits desc should use a sentance or two to describe each exit.
+
+A zoit also has a 1 line season desc, which will be displayed with the regular desc.  A season desc should never mention the season.
+- summer desc: a 1 sentence desc to add to the zoit in summer
+- winter desc: a 1 sentence desc to add to the zoit in winter
+- fall desc: a 1 sentence desc to add to the zoit in fall
+- spring desc: a 1 sentence desc to add to the zoit in spring
+
+A zoit also has a 1 line weather desc, which will be displayed with the regular desc
+- rain desc: a 1 sentence desc to add to the zoit when it's raining
+- snow desc: a 1 sentence desc to add to the zoit when it's snowing
+- foggy desc: a 1 sentence desc to add to the zoit when it's foggy
+- sunny desc: a 1 sentence desc to add to the zoit when it's sunny
+- cloudy desc: a 1 sentence desc to add to the zoit when it's cloudy
+- partly cloudy desc: a 1 sentence desc to add to the zoit when it's partly cloudy
+
+A zoit also has a 1 line time-of-day desc, which will be displayed with the regular desc:
+- day desc: a 1 sentence desc to add when its daytime
+- night desc: a 1 sentence desc to add when its nighttime
+- dusk desc: a 1 sentence desc to add when its dusk
+- dawn desc: a 1 sentence desc to add when its dawn
+
+Each exit has these things:
+- the zoit id it leads to
+- 0 or more exit flags: door, hidden
+
+These are the different types of exit flags:
+- hidden: this means the exit is hidden from the player.  This is used for secrets.
+- door: this means there is something players have to interact with before being able to go that direction.  Doors can be doors, gates, and also objects, such as a bush, tree, trapdoor, barrel, chest, etc.
+- locked: if there's a door, it can be locked.
+
+When outputting zoits, use the format:
+ID:
+Title:
+Desc:
+Exits Desc:
+Day Desc:
+Night Desc:
+Dawn Desc:
+Dusk Desc:
+Summer Desc:
+Winter Desc:
+Fall Desc:
+Spring Desc:
+Rain Desc:
+Snow Desc:
+Foggy Desc:
+Sunny Desc:
+Cloudy Desc:
+Partly Cloudy Desc:
+<Direction> Exit: <zoit id>, <exit flags>
+
+Build a noit with at least 30 zoits.  Do not skip any zoits. It should be a small classical era fishing village.  The climate should be similar to San Jose, California.
+

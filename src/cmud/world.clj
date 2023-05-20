@@ -4,6 +4,10 @@
 
 (defonce next-entity (atom 1))
 
+(def seasons [:winter :summer :spring :fall])
+(def times [:day :night :dusk :dawn])
+(def weathers [:rain :snow :fog :sunny :cloudy :partly-cloudy])
+
 (defn- load-zones
   []
   (let [zone-files (file-seq (io/file "data/zones/edn"))]
@@ -25,8 +29,24 @@
   (let [zones (load-zones)
         rooms (mapcat :rooms zones)]
     {:rooms rooms
+     :weather :sunny
+     :time :day
+     :season :summer
      :zones zones
      :entities {}}))
+
+(defn room-description
+  [room world entity]
+  (let [desc (:description room)
+        exits-desc (:exits-description room)
+        time-desc (get-in room [:special-descriptions :time (:time world)])
+        season-desc (get-in room [:special-descriptions :season (:season world)])
+        weather-desc (get-in room [:special-descriptions :weather (:weather world)])]
+    (cond-> desc
+      season-desc (str " " season-desc)
+      time-desc (str " " time-desc)
+      weather-desc (str " " weather-desc)
+      exits-desc (str " " exits-desc))))
 
 (defn get-room
   [world room-id]
@@ -75,6 +95,25 @@
                  (string/starts-with? line "ID: ") {:id {:zone-id zone-id :room-num (Integer/parseInt (subs line 4))}}
                  (string/starts-with? line "Title: ") (assoc room :title (subs line 7))
                  (string/starts-with? line "Desc: ") (assoc room :description (subs line 6))
+                 (string/starts-with? line "Exits Desc: ") (assoc room :exits-description (subs line 12))
+
+                 (string/starts-with? line "Day Desc: ") (assoc-in room [:special-descriptions :time :day] (subs line 10))
+                 (string/starts-with? line "Night Desc: ") (assoc-in room [:special-descriptions :time :night] (subs line 12))
+                 (string/starts-with? line "Dusk Desc: ") (assoc-in room [:special-descriptions :time :dusk] (subs line 11))
+                 (string/starts-with? line "Dawn Desc: ") (assoc-in room [:special-descriptions :time :dawn] (subs line 11))
+
+                 (string/starts-with? line "Summer Desc: ") (assoc-in room [:special-descriptions :season :summer] (subs line 13))
+                 (string/starts-with? line "Winter Desc: ") (assoc-in room [:special-descriptions :season :winter] (subs line 13))
+                 (string/starts-with? line "Spring Desc: ") (assoc-in room [:special-descriptions :season :spring] (subs line 13))
+                 (string/starts-with? line "Fall Desc: ")   (assoc-in room [:special-descriptions :season :fall]   (subs line 11))
+
+                 (string/starts-with? line "Rain Desc: ")          (assoc-in room [:special-descriptions :weather :rain]          (subs line 11))
+                 (string/starts-with? line "Snow Desc: ")          (assoc-in room [:special-descriptions :weather :snow]          (subs line 11))
+                 (string/starts-with? line "Foggy Desc: ")         (assoc-in room [:special-descriptions :weather :fog]           (subs line 12))
+                 (string/starts-with? line "Sunny Desc: ")         (assoc-in room [:special-descriptions :weather :sunny]         (subs line 12))
+                 (string/starts-with? line "Cloudy Desc: ")        (assoc-in room [:special-descriptions :weather :cloudy]        (subs line 13))
+                 (string/starts-with? line "Partly Cloudy Desc: ") (assoc-in room [:special-descriptions :weather :partly-cloudy] (subs line 20))
+
                  (string/starts-with? line "North Exit: ") (assoc-in room [:exits :north] (raw-data->exit (subs line 12) zone-id))
                  (string/starts-with? line "South Exit: ") (assoc-in room [:exits :south] (raw-data->exit (subs line 12) zone-id))
                  (string/starts-with? line "East Exit: ") (assoc-in room [:exits :east] (raw-data->exit (subs line 11) zone-id))

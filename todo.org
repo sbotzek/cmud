@@ -1,1 +1,9 @@
 #+STARTUP: overview
+
+* TODO contradictory descriptions with dynamic, stitched together descriptions
+goto village02-11
+
+season winter
+time night
+* TODO see if I can solve a 'redundant noun' problem with dynamic, stitched together descriptions
+goto village02-9

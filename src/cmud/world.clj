@@ -24,6 +24,12 @@
             []
             zone-files)))
 
+(defn reload-zones
+  [world]
+  (let [zones (load-zones)
+        rooms (mapcat :rooms zones)]
+    (assoc world :zones zones :rooms rooms)))
+
 (defn make-world
   []
   (let [zones (load-zones)

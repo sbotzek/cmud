@@ -19,7 +19,9 @@
 
     (string/includes? s "-")
     (try
-      (let [[prefix suffix] (string/split s #"-")]
+      (let [idx (string/last-index-of s "-")
+            prefix (subs s 0 idx)
+            suffix (subs s (inc idx))]
         (let [zone-id prefix
               room-num (Integer/parseInt suffix)]
           {:zone-id zone-id :room-num room-num}))
@@ -86,6 +88,7 @@
                          (try
                            (cmud.world/convert-raw-zone (first args))
                            (println "Converted zone file.")
+                           (cmud.world/reload-zones world)
                            (catch Exception e
                              (println (str "Error converting zone file: " (.getMessage e)))
                              (.printStackTrace e))))}

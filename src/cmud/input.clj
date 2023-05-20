@@ -1,9 +1,8 @@
-(ns cmud.cmd
+(ns cmud.input
   (:require [clojure.string :as string]
-            [cmud.world :as world]
-            [cmud.cmd :as cmd]))
+            [cmud.world :as world]))
 
-(declare handle-cmd)
+(declare handle-input)
 
 (defn parse-keyword
   [keywords s]
@@ -45,7 +44,7 @@
       (let [to-room (world/get-room world (:to-room-id exit))]
         (if to-room
           (let [world' (assoc-in world [:entities entity :in-room-id] (:to-room-id exit))]
-            (handle-cmd world' entity "look" [])
+            (handle-input world' entity "look" [])
             world')
           (println (str "Could not find room " (:to-room-id exit)))))
       (println (str "You cannot go " (name dir))))))
@@ -111,12 +110,12 @@
                             room (world/get-room world room-id)]
                         (if room
                           (let [world' (assoc-in world [:entities entity :in-room-id] room-id)]
-                            (handle-cmd world' entity "look" [])
+                            (handle-input world' entity "look" [])
                             world')
                           (println (str "Could not find room " room-id)))))}
    ])
 
-(defn handle-cmd
+(defn handle-input
   [world entity cmd-input args]
   (let [cmd (first (filter (fn cmd?
                              [cmd]

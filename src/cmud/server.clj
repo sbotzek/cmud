@@ -1,6 +1,6 @@
 (ns cmud.server
   (:require [clojure.string :as string]
-            [cmud.cmd :refer [handle-cmd]]
+            [cmud.input :refer [handle-input]]
             [cmud.world :refer [make-world add-entity]]))
 
 (defn main-loop
@@ -9,7 +9,7 @@
         [cmd & args] (string/split input #"\s")]
     (cond
       (= cmd "") (recur world entity)
-      (not= cmd "quit") (let [world' (or (handle-cmd world entity cmd args) world)]
+      (not= cmd "quit") (let [world' (or (handle-input world entity cmd args) world)]
                           (recur world' entity))
       :else (println "goodbye"))))
 

@@ -1,0 +1,70 @@
+Glossary of terms:
+- kud: a multiplayer text roleplaying game, where players can adventure together, explore the world, fighting monsters and finding treasure.
+- koom: a location a player can be
+- kone: a group of kooms centered around a larger place - such as a castle, church, forest, mountain, etc
+- desc: description
+
+Kooms are linked to eachother like a connected graph.  Players can move around them if they are linked together.  They do so by going in certain directions: north, south, east, west, up, down.
+
+Each koom has these things:
+- a koom id
+- a koom title
+- a koom desc
+- a koom links desc
+
+A koom desc must be 3 to 5 sentences long to describe the current koom.  You should not mention any details about the links here - that is only done in the links desc.
+
+A koom links desc should use a sentance or two to describe each other koom it is linked to.
+
+A koom also has a 1 line season desc, which will be displayed with the regular desc.  A season desc should never mention the season.
+- summer desc: a 1 sentence desc to add to the koom in summer
+- winter desc: a 1 sentence desc to add to the koom in winter
+- fall desc: a 1 sentence desc to add to the koom in fall
+- spring desc: a 1 sentence desc to add to the koom in spring
+
+A koom also has a 1 line weather desc, which will be displayed with the regular desc
+- rain desc: a 1 sentence desc to add to the koom when it's raining
+- snow desc: a 1 sentence desc to add to the koom when it's snowing
+- foggy desc: a 1 sentence desc to add to the koom when it's foggy
+- sunny desc: a 1 sentence desc to add to the koom when it's sunny
+- cloudy desc: a 1 sentence desc to add to the koom when it's cloudy
+- partly cloudy desc: a 1 sentence desc to add to the koom when it's partly cloudy
+
+A koom also has a 1 line time-of-day desc, which will be displayed with the regular desc:
+- day desc: a 1 sentence desc to add when its daytime
+- night desc: a 1 sentence desc to add when its nighttime
+- dusk desc: a 1 sentence desc to add when its dusk
+- dawn desc: a 1 sentence desc to add when its dawn
+
+Each link has these things:
+- the first koom id, and the direction of travel to get there
+- the second koom id, and the direction of travel to get there
+- 0 or more link flags: door, hidden
+
+These are the different types of link flags:
+- hidden: this means the link is hidden from the player.  This is used for secrets.
+- door: this means there is something players have to interact with before being able to go that direction.  Doors can be doors, gates, and also objects, such as a bush, tree, trapdoor, barrel, chest, etc.
+- locked: if there's a door, it can be locked.
+
+When outputting kooms, use the format:
+ID:
+Title:
+Desc:
+Links Desc:
+Day Desc:
+Night Desc:
+Dawn Desc:
+Dusk Desc:
+Summer Desc:
+Winter Desc:
+Fall Desc:
+Spring Desc:
+Rain Desc:
+Snow Desc:
+Foggy Desc:
+Sunny Desc:
+Cloudy Desc:
+Partly Cloudy Desc:
+<Direction> Link: <to koom id>, <link flags>
+
+Build a kone with at least 30 kooms.  Do not skip any kooms. It should be a vast, mostly empty arid desert.

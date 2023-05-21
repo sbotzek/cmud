@@ -102,6 +102,7 @@
                  (string/starts-with? line "Title: ") (assoc room :title (subs line 7))
                  (string/starts-with? line "Desc: ") (assoc room :description (subs line 6))
                  (string/starts-with? line "Exits Desc: ") (assoc room :exits-description (subs line 12))
+                 (string/starts-with? line "Links Desc: ") (assoc room :exits-description (subs line 12))
 
                  (string/starts-with? line "Day Desc: ") (assoc-in room [:special-descriptions :time :day] (subs line 10))
                  (string/starts-with? line "Night Desc: ") (assoc-in room [:special-descriptions :time :night] (subs line 12))
@@ -121,11 +122,17 @@
                  (string/starts-with? line "Partly Cloudy Desc: ") (assoc-in room [:special-descriptions :weather :partly-cloudy] (subs line 20))
 
                  (string/starts-with? line "North Exit: ") (assoc-in room [:exits :north] (raw-data->exit (subs line 12) zone-id))
+                 (string/starts-with? line "North Link: ") (assoc-in room [:exits :north] (raw-data->exit (subs line 12) zone-id))
                  (string/starts-with? line "South Exit: ") (assoc-in room [:exits :south] (raw-data->exit (subs line 12) zone-id))
+                 (string/starts-with? line "South Link: ") (assoc-in room [:exits :south] (raw-data->exit (subs line 12) zone-id))
                  (string/starts-with? line "East Exit: ") (assoc-in room [:exits :east] (raw-data->exit (subs line 11) zone-id))
+                 (string/starts-with? line "East Link: ") (assoc-in room [:exits :east] (raw-data->exit (subs line 11) zone-id))
                  (string/starts-with? line "West Exit: ") (assoc-in room [:exits :west] (raw-data->exit (subs line 11) zone-id))
+                 (string/starts-with? line "West Link: ") (assoc-in room [:exits :west] (raw-data->exit (subs line 11) zone-id))
                  (string/starts-with? line "Up Exit: ") (assoc-in room [:exits :up] (raw-data->exit (subs line 9) zone-id))
-                 (string/starts-with? line "Down Exit: ") (assoc-in room [:exits :down] (raw-data->exit (subs line 11) zone-id)))]
+                 (string/starts-with? line "Up Link: ") (assoc-in room [:exits :up] (raw-data->exit (subs line 9) zone-id))
+                 (string/starts-with? line "Down Exit: ") (assoc-in room [:exits :down] (raw-data->exit (subs line 11) zone-id))
+                 (string/starts-with? line "Down Link: ") (assoc-in room [:exits :down] (raw-data->exit (subs line 11) zone-id)))]
       (if (seq rest)
         (recur rest room rooms)
         (let [problems (transient [])]

@@ -135,7 +135,8 @@
                  (string/starts-with? line "Down Link: ") (assoc-in room [:exits :down] (raw-data->exit (subs line 11) zone-id)))]
       (if (seq rest)
         (recur rest room rooms)
-        (let [problems (transient [])]
+        (let [problems (transient [])
+              rooms (if room (conj rooms room) room)]
           ;; do some checks
           (doseq [room rooms]
             ;; make sure the room is reachable

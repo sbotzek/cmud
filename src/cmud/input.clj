@@ -85,8 +85,12 @@
    {:cmd "convert" :fn (fn cmd-convert
                          [world entity cmd-input args]
                          (try
-                           (world/convert-raw-zone (first args))
-                           (println "Converted zone file.")
+                           (let [problems (world/convert-raw-zone (first args))]
+                             (println "Converted zone file.")
+                             (when (seq problems)
+                               (println "Problems:")
+                               (doseq [problem problems]
+                                 (println (str "  " problem)))))
                            (world/reload-zones world)
                            (catch Exception e
                              (println (str "Error converting zone file: " (.getMessage e)))

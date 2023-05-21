@@ -128,8 +128,35 @@
                  (string/starts-with? line "Down Exit: ") (assoc-in room [:exits :down] (raw-data->exit (subs line 11) zone-id)))]
       (if (seq rest)
         (recur rest room rooms)
-        (sort-by (comp :room-num :id)
-                 (map last (vals (group-by :id rooms)))))))) ; removes duplicates
+        (let [problems (transient [])]
+          ;; do some checks
+          (doseq [room rooms]
+            ;; make sure the room is reachable
+            (when (not-any? (fn room-can-reach?
+                              [other-room]
+                              (->> other-room
+                                   :exits
+                                   vals
+                                   (map :to-room-id)
+                                   (filter #(= (:id room) %))
+                                   seq))
+                            rooms)
+              (conj! problems {:problem :room-unreachable :room-id (:id room)}))
+            ;; check exit problems
+            (doseq [exit (vals (:exits room))]
+              (let [to-room-id (:to-room-id exit)
+                    to-room (first (filter #(= (:id %) to-room-id) rooms))]
+                (cond
+                  ;; can't find the room
+                  (nil? to-room)
+                  (conj! problems {:problem :exit-missing-room :to-room-id to-room-id :room-id (:id room)})
+
+                  ;; the room this links doesn't link back
+                  (not-any? #(= (:id room) (:to-room-id %)) (vals (:exits to-room)))
+                  (conj! problems {:problem :exit-one-way :to-room-id to-room-id :from-room-id (:id room)})))))
+          {:problems (persistent! problems)
+           :rooms (sort-by (comp :room-num :id)
+                           (map last (vals (group-by :id rooms))))}))))) ; removes duplicates
 
 (defn convert-raw-zone
   [zone-name]
@@ -138,4 +165,5 @@
         zone (raw-data->zone (slurp full-path) zone-id)
         out-path (str "data/zones/edn/" zone-name ".edn")]
     (io/make-parents out-path)
-    (spit out-path (pr-str zone))))
+    (spit out-path (pr-str (:rooms zone)))
+    (:problems zone)))

@@ -1,0 +1,328 @@
+ID: 1
+Title: Mountain Entrance
+Desc: The forest pathway slowly ascends and meets with the rugged stonework of the mountain. A sense of majesty emanates from the mountain. Moss-covered rocks lie scattered, enhancing the natural beauty.
+Links Desc: To the north, the pathway leads deeper into the forest. Eastward, a stony trail ascends the mountain.
+Summer Desc: The aroma of blooming flowers is especially strong here.
+Winter Desc: The mountain appears sterner, its rocky face partially covered in snow.
+Fall Desc: Foliage from the nearby trees covers the ground in a colorful blanket.
+Spring Desc: The chirping of birds from the trees is vibrant and full of life.
+North Link: 2
+East Link: 3
+
+ID: 2
+Title: Deep Forest
+Desc: The forest is dense here, with tall, ancient trees that almost blot out the sky. The rich scent of earth and leaves permeates the air. The soft rustling of leaves is the only sound.
+Links Desc: The path extends south, back toward the mountain entrance. To the west lies a clear brook.
+Summer Desc: Butterflies flutter among the trees, adding splashes of color.
+Winter Desc: Snow rests lightly on the branches, a quiet reminder of the season.
+Fall Desc: The forest turns into an explosion of reds, oranges, and yellows.
+Spring Desc: Fresh green buds on the trees signify the revival of life.
+South Link: 1
+West Link: 5
+
+ID: 3
+Title: Mountain Trail
+Desc: The trail is rough underfoot, flanked by cliffs on one side and a drop on the other. Pebbles skitter down the slope with each footstep. The expanse of the forest can be seen from here.
+Links Desc: The trail descends to the west, back toward the mountain entrance. To the east is a steep ascent.
+Summer Desc: A soft breeze brings with it the scent of blooming mountain flowers.
+Winter Desc: Ice formations hang off the cliffs, sparkling in the light.
+Fall Desc: Fallen leaves add a crunch underfoot to the rocky trail.
+Spring Desc: Fresh moss grows on the rocks, bright against the grey stone.
+West Link: 1
+East Link: 7, hidden
+
+ID: 4
+Title: Mountain Peak
+Desc: The view from the peak is breathtaking, with the forest expanse below and the limitless sky above. The wind carries a cool freshness that fills the lungs. The quiet solitude adds to the serenity of the place.
+Links Desc: To the west, a rocky path descends back down the mountain. A hidden path leads north.
+Summer Desc: Flowers bloom in the cracks of the rocks, adding color to the landscape.
+Winter Desc: A thin layer of frost coats the rocks, adding a sparkle in the sunlight.
+Fall Desc: The wind carries the faint scent of the forest's foliage.
+Spring Desc: Tiny buds of life begin to appear between the stones.
+West Link: 3
+North Link: 8, hidden
+
+ID: 5
+Title: Forest Brook
+Desc: The brook babbles happily as it travels its course, reflecting the sunlight that filters through the leaves. A family of ducks waddle near the water's edge. The grass is lush and green.
+Links Desc: Eastward, the path leads back into the dense forest. To the west, a quaint wooden bridge crosses the brook.
+Summer Desc: The water is cool and refreshing, the perfect escape from the heat.
+Winter Desc: The brook runs clear and cold, the water nearly freezing to the touch.
+Fall Desc: The rustling leaves near the brook create a comforting sound.
+Spring Desc: Fresh flowers bloom along the water's edge, adding color to the scene.
+East Link: 2
+West Link: 6
+
+ID: 6
+Title: Wooden Bridge
+Desc: The wooden bridge, although old, is sturdy and well-crafted. It arches gently over the babbling brook. The sound of running water accompanies your steps, creating a soothing melody.
+Links Desc: To the east, the path returns to the forest brook. A mysterious path leads to the west, into the unknown.
+Summer Desc: Sunlight filters through the trees, casting dappled shadows on the wooden planks.
+Winter Desc: The wooden planks are slick with frost, requiring careful footsteps.
+Fall Desc: Fallen leaves decorate the bridge, adding an orange-red hue.
+Spring Desc: New buds on nearby trees bring a promise of renewed life.
+East Link: 5
+West Link: 10, door
+
+ID: 7
+Title: Mountain Ascent
+Desc: The ascent is steep and challenging, with jagged rocks and a sheer drop to one side. The forest below seems like a patchwork of varying green hues. The higher altitude fills the air with a crisp freshness.
+Links Desc: To the west, the trail descends back toward the mountain trail. The path continues to the peak to the east.
+Summer Desc: The rock surface is warm to the touch, heated by the summer sun.
+Winter Desc: The trail becomes treacherous with ice, making each step an adventure.
+Fall Desc: From this height, the forest looks like a living, breathing canvas of autumn colors.
+Spring Desc: The aroma of blossoming flowers from the forest below wafts up here.
+West Link: 3
+East Link: 4
+
+ID: 8
+Title: Hidden Mountain Cave
+Desc: The cave is a surprise amid the surrounding rocks. It's dark and quiet, with echoes of dripping water. Moss and lichen cover the inner walls, giving off a faint earthy smell.
+Links Desc: To the south, a narrow passage leads back to the mountain peak. Deeper into the cave, there seems to be an intriguing path to the north.
+Summer Desc: The cave provides a cool retreat from the summer heat.
+Winter Desc: Despite the cold outside, the cave maintains a constant, cool temperature.
+Fall Desc: A few stray leaves make their way into the cave, adding a touch of autumn.
+Spring Desc: Tiny stalactites glisten with dewdrops, reflecting the weak sunlight.
+South Link: 4
+North Link: 9, door, locked
+
+ID: 9
+Title: Secret Treasure Chamber
+Desc: This secret room sparkles with all manner of treasures - gold, jewels, and artefacts. A warm, inviting glow emanates from the treasures, casting intriguing shadows. The air smells slightly musty, hinting at the age of the treasures.
+Links Desc: A single path leads back to the cave to the south.
+Summer Desc: The gold and jewels seem to shimmer even more in the summer light.
+Winter Desc: The chilly air gives the room an even more secluded feel.
+Fall Desc: A stray leaf or two that has found its way in adds a splash of color among the gold.
+Spring Desc: The room seems to come alive in the gentle light of spring.
+South Link: 8
+
+ID: 10
+Title: Deep Woods Path
+Desc: This narrow path winds through the deeper parts of the forest. Tall trees surround the path, creating a feeling of tranquillity. The smell of pine and damp earth fills the air.
+Links Desc: To the east, the wooden bridge crosses over the brook. To the west, the path leads to a clear woodland glade.
+Summer Desc: Sunlight dapples the ground, adding a magical quality to the path.
+Winter Desc: The path is covered in a light dusting of snow, creating a peaceful, hushed atmosphere.
+Fall Desc: The path is carpeted with autumn leaves, adding to the rustic charm.
+Spring Desc: Vibrant flowers dot the sides of the path, their sweet scent perfuming the air.
+East Link: 6
+West Link: 11
+
+ID: 11
+Title: Woodland Glade
+Desc: A serene glade opens up here, bathed in soft sunlight filtering through the trees. A gentle brook babbles on one side, reflecting the sky. The grass is soft and lush underfoot.
+Links Desc: The path back to the east leads to the deeper forest. To the west, a stone bridge crosses the brook.
+Summer Desc: The air is filled with the sound of birdsong, creating a lively symphony.
+Winter Desc: The glade is peacefully silent, with the brook running icy cold.
+Fall Desc: The leaves create a kaleidoscope of colors, making the glade even more enchanting.
+Spring Desc: The glade is alive with the chirping of newly hatched birds and the rustle of small animals.
+East Link: 10
+West Link: 12
+
+ID: 12
+Title: Stone Bridge
+Desc: The stone bridge is a sturdy structure, worn by time but still holding firm. It offers a beautiful view of the clear brook flowing beneath. The sound of the flowing water is soothing.
+Links Desc: To the east, the woodland glade awaits. To the west, the path leads toward a deeper part of the forest.
+Summer Desc: The stones of the bridge are warm under the sun, comforting to the touch.
+Winter Desc: The bridge is slick with frost, making each step an adventure.
+Fall Desc: The bridge is decorated with fallen leaves, adding a touch of autumn charm.
+Spring Desc: Fresh moss grows on the stones, bright against the gray stone.
+East Link: 11
+West Link: 13
+
+ID: 13
+Title: Deep Forest Clearing
+Desc: This part of the forest is dense and alive with sounds of wildlife. The trees stand tall and proud, their branches interwoven like a natural canopy. The forest floor is soft with layers of fallen leaves.
+Links Desc: To the east, the stone bridge crosses the brook. To the west, a hidden path leads into the heart of the forest.
+Summer Desc: Sunlight filters through the leaves, casting a greenish glow all around.
+Winter Desc: The forest is silent and still, its peacefulness undisturbed by the cold.
+Fall Desc: The trees are ablaze with color, creating an enchanting landscape.
+Spring Desc: The scent of blooming flowers fills the air, a sign of renewal.
+East Link: 12
+West Link: 14, hidden
+
+ID: 14
+Title: Heart of the Forest
+Desc: Here in the heart of the forest, the world feels tranquil and serene. Ancient trees tower overhead, their thick trunks a testament to their age. The scent of pine and damp earth is intoxicating.
+Links Desc: A hidden path leads back east to the deep forest clearing. The path continues north into a thick grove.
+Summer Desc: The air is cooler here, offering relief from the summer heat.
+Winter Desc: Snow rests lightly on the branches, transforming the forest into a winter wonderland.
+Fall Desc: The ground is a carpet of colorful leaves, creating a beautiful contrast.
+Spring Desc: The chirping of birds and the rustling of leaves create a lively symphony.
+East Link: 13
+North Link: 15
+
+ID: 15
+Title: Forest Grove
+Desc: The grove is a peaceful sanctuary nestled between towering trees. Sunlight filters through the leafy canopy, casting patterns on the ground. An old tree stump serves as a makeshift seat.
+Links Desc: The path leads back to the south into the heart of the forest. Northward, the trail meanders further into the grove.
+Summer Desc: The sound of bees busily collecting nectar from blooming flowers fills the air.
+Winter Desc: The grove holds a peaceful silence, disturbed only by the occasional crunch of snow underfoot.
+Fall Desc: The trees burst into a variety of colors, creating a captivating view.
+Spring Desc: Young leaves lend the grove a fresh, vibrant green hue.
+South Link: 14
+North Link: 16
+
+ID: 16
+Title: Grove Pathway
+Desc: This path winds through the grove, leading deeper into the forest. The air is filled with the gentle rustle of leaves. Ferns and mushrooms grow abundantly, painting a beautiful picture.
+Links Desc: To the south, the path leads back to the forest grove. To the north, the path ends at a clear woodland pond.
+Summer Desc: The aroma of pine and wildflowers is particularly strong here.
+Winter Desc: Fresh snow clings to the ferns, transforming the path into a winter wonderland.
+Fall Desc: Colorful leaves form a vibrant tapestry underfoot.
+Spring Desc: Vibrant wildflowers bloom along the path, lending a sweet fragrance to the air.
+South Link: 15
+North Link: 17
+
+ID: 17
+Title: Woodland Pondk
+Desc: Dragonflies hover over the water, creating ripples on the surface. The reflection of the trees on the water's surface creates a serene picture.
+Links Desc: The grove pathway lies to the south. The trail continues north toward an old wooden cabin.
+Summer Desc: The pond glistens under the bright summer sunlight.
+Winter Desc: The pond's surface is frozen, capturing a moment of tranquillity in ice.
+Fall Desc: The pond reflects the vibrant colors of the surrounding trees, doubling the autumn beauty.
+Spring Desc: The pond teams with tadpoles and small fish, a sign of new life.
+South Link: 16
+North Link: 18
+
+ID: 18
+Title: Old Wooden Cabin
+Desc: The cabin, though worn by time, stands strong amidst the forest. Moss covers its wooden walls, and a curl of smoke rises from the chimney. It's a quiet testament to a simpler time.
+Links Desc: The path back to the south leads to the woodland pond. The trail leads westward toward the dense forest.
+Summer Desc: Sunlight filters through the trees, casting a warm glow on the cabin.
+Winter Desc: The cabin stands out against the white snow, a beacon of warmth.
+Fall Desc: The cabin is surrounded by a mosaic of fall colors, adding to its charm.
+Spring Desc: The cabin is enlivened by the surrounding fresh green leaves and blooming flowers.
+South Link: 17
+West Link: 19
+
+ID: 19
+Title: Dense Forest Trail
+Desc: This part of the forest is particularly dense. Tall trees create a natural tunnel over the path. A quiet rustle can be heard as wildlife moves through the undergrowth.
+Links Desc: To the east, the old wooden cabin provides a place of respite. The path continues to the west, toward the mountain ascent.
+Summer Desc: The path is cooler under the shade of the trees, offering respite from the summer heat.
+Winter Desc: Snow rests lightly on the branches, creating a peaceful, hushed atmosphere.
+Fall Desc: The ground is a carpet of colorful leaves, creating a beautiful contrast.
+Spring Desc: The sound of chirping birds and rustling leaves fills the air, creating a serene melody.
+East Link: 18
+West Link: 20
+
+ID: 20
+Title: Mountain Ascent
+Desc: The forest gradually gives way to a rocky path leading up the mountain. Small shrubs and moss cling to the rocks. The path is steep, but the view promises to be worth it.
+Links Desc: The dense forest trail lies to the east. A narrow mountain pass lies to the west.
+Summer Desc: The sun's rays warm the rocky path, making the stones hot to the touch.
+Winter Desc: Snow dusts the mountain path, lending an ethereal beauty to the ascent.
+Fall Desc: Small shrubs along the path turn into a riot of colors.
+Spring Desc: New growth springs from the cracks in the rocks, painting them in various shades of green.
+East Link: 19
+West Link: 21
+
+ID: 21
+Title: Narrow Mountain Pass
+Desc: This narrow pass is a precarious trek with the mountain wall on one side and a steep drop on the other. The path is rocky, and one can see the forest from a great height.
+Links Desc: The mountain ascent lies to the east. To the west, the path broadens into a plateau.
+Summer Desc: The pass offers a breathtaking view of the forest bathed in sunlight.
+Winter Desc: The path is slick with ice, adding an extra challenge to the trek.
+Fall Desc: The forest appears as a beautiful tapestry of fall colors from the pass.
+Spring Desc: Wild mountain flowers bloom around the pass, adding color to the rocky terrain.
+East Link: 20
+West Link: 22
+
+ID: 22
+Title: Mountain Plateau
+Desc: The path opens onto a flat plateau. Tall grasses sway in the mountain breeze, and a single tree stands proudly in the center. It's a peaceful contrast to the difficult climb.
+Links Desc: The narrow mountain pass is back to the east. A steep downhill path leads west into the deeper forest.
+Summer Desc: A variety of mountain flowers bloom amongst the tall grass, creating patches of color.
+Winter Desc: Snow blankets the plateau, undisturbed except for the occasional tracks of mountain animals.
+Fall Desc: The grasses turn golden, swaying like waves under the autumn sky.
+Spring Desc: Fresh green shoots poke through the soil, promising a lush meadow.
+East Link: 21
+West Link: 23
+
+ID: 23
+Title: Downhill Path
+Desc: The path here is steep and covered in loose stones. Care is required to navigate safely. The trees start to close in again, signaling your return to the forest.
+Links Desc: The plateau is a hard climb back to the east. A small brook babbles merrily to the west.
+Summer Desc: The shade from the trees provides respite from the summer sun.
+Winter Desc: The path becomes slick with ice, adding a layer of difficulty to the descent.
+Fall Desc: Fallen leaves add a pop of color to the otherwise rocky path.
+Spring Desc: Small flowers poke through the rocks along the path, signaling the start of a new season.
+East Link: 22
+West Link: 24
+
+ID: 24
+Title: Babbling Brook
+Desc: A small, clear brook cuts through the path. The sound of water over pebbles fills the air. Overhanging branches from the surrounding trees create a peaceful canopy.
+Links Desc: The downhill path stretches back to the east. A moss-covered stone bridge to the west leads across the brook.
+Summer Desc: The brook shimmers under the bright sunlight, inviting you to take a break and cool off.
+Winter Desc: Ice clings to the edges of the brook, creating a sharp contrast to the running water.
+Fall Desc: Fallen leaves float gently down the brook, carried away by the current.
+Spring Desc: The brook runs higher with the spring rain, bubbling merrily along its course.
+East Link: 23
+West Link: 25
+
+ID: 25
+Title: Stone Bridge
+Desc: An old, moss-covered stone bridge crosses the brook. The craftsmanship is simple yet enduring. The bridge provides a wonderful vantage point to enjoy the surrounding forest.
+Links Desc: To the east, the babbling brook whispers its endless song. The path to the west leads to a glade filled with wildflowers.
+Summer Desc: The sunlight plays off the water under the bridge, creating a shimmering light show.
+Winter Desc: The snow-covered bridge offers a serene and picturesque view.
+Fall Desc: The bridge is dusted with fallen leaves, adding a touch of color.
+Spring Desc: The stone bridge is a platform to view the brook, swollen with fresh spring waters.
+East Link: 24
+West Link: 26
+
+ID: 26
+Title: Wildflower Glade
+Desc: The forest opens up into a glade filled with wildflowers of all colors. The air is sweet with their scent. The vibrant colors and the gentle buzzing of bees create an enchanting atmosphere.
+Links Desc: Back to the east, the stone bridge spans the brook. To the west, the path leads to a mysterious ancient ruin.
+Summer Desc: Bees buzz from flower to flower, busy collecting nectar.
+Winter Desc: A fresh blanket of snow gives the glade a peaceful, untouched look.
+Fall Desc: Dried wildflowers add a rustic charm to the glade.
+Spring Desc: New blooms cover the glade, filling the air with a sweet fragrance.
+East Link: 25
+West Link: 27
+
+ID: 27
+Title: Ancient Ruins
+Desc: The path ends at a crumbling structure, overtaken by nature. The stonework, though eroded by time, hints at a once magnificent building. The air is heavy with an old, silent mystery.
+Links Desc: The wildflower glade is visible to the east. A hidden path to the north is nearly obscured by the undergrowth.
+Summer Desc: Vines heavy with flowers cover parts of the ruin, softening the edges of the ancient stone.
+Winter Desc: Snow accentuates the old stonework, offering a stark contrast to the grey stones.
+Fall Desc: The ruins are half-hidden under a blanket of colorful leaves.
+Spring Desc: Fresh green moss and vines creep over the ruins, breathing new life into the old stones.
+East Link: 26
+North Link: 28, hidden
+
+ID: 28
+Title: Hidden Grove
+Desc: This secluded grove is filled with rare herbs and flowers. It seems undisturbed by time. There's a serene quality to this place, an invitation to pause and appreciate the natural beauty.
+Links Desc: An almost unnoticeable path to the south leads back to the ancient ruins. A well-trodden path to the east hints at regular visitors.
+Summer Desc: The herbs in the grove release a complex mix of scents, filling the air with an intoxicating fragrance.
+Winter Desc: Frost decorates the foliage, making the grove look like a scene from a fairy tale.
+Fall Desc: The leaves create a colorful mosaic on the ground, blending seamlessly with the fallen petals.
+Spring Desc: Blooms in the grove cover the area with a riot of colors and a medley of fragrances.
+South Link: 27, hidden
+East Link: 29
+
+ID: 29
+Title: Ancient Oak
+Desc: This enormous oak tree stands in a small clearing. Its gnarled bark and broad branches speak of its age. A hollow in its trunk serves as a home for various forest creatures.
+Links Desc: To the west, the path leads back to the dense forest trail. To the east, the mountain forest edge awaits.
+Summer Desc: The oak's leaves are a deep, lush green, providing ample shade.
+Winter Desc: Snow clings to the oak's branches, creating a beautiful contrast against the bark.
+Fall Desc: The oak's leaves turn a fiery orange, creating a breathtaking sight.
+Spring Desc: New leaves and buds on the oak signal the arrival of a new season.
+West Link: 28
+East Link: 30
+
+ID: 30
+Title: Mountain Forest Edge
+Desc: The forest thins out here, signaling the end of the mountain forest. The last few trees stand tall and proud, like sentinels guarding the forest. The mountains loom in the distance.
+Links Desc: The path back east leads to the ancient oak. A grassy plain stretches out to the west.
+Summer Desc: Wildflowers bloom in the clearing, painting the area with vibrant colors.
+Winter Desc: The plain is covered in a thin layer of frost, sparkling in the morning light.
+Fall Desc: Dry leaves crunch underfoot, creating a comforting sound.
+Spring Desc: Young grass covers the plain, painting it a vibrant green.
+East Link: 29
+West Link: 1
